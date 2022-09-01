@@ -37,8 +37,10 @@
                     <ProfileImage v-if="isLoggedIn" data-test="profile-image" />
                     <ActionButton
                         v-else
-                        data-test="login-button"
                         @click="loginUser"
+                        type="nonsense"
+                        data-test="login-button"
+                        text="Sign In"
                     />
                 </div>
             </div>
