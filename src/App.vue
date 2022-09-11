@@ -1,12 +1,15 @@
 <template>
-    <h1 class="mt-8 text-brand-green-1">Hello World!</h1>
+  <div>
     <MainNav />
+    <Hero />
+  </div>
 </template>
 
 <script>
 import MainNav from '@/components/MainNav.vue';
+import Hero from '@/components/Hero.vue';
 export default {
-    name: 'App',
-    components: { MainNav },
+  name: 'App',
+  components: { MainNav, Hero },
 };
 </script>
