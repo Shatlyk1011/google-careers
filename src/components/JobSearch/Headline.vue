@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="mb-16">
     <h1 class="font-bold tracking-tighter text-8xl mb-14">
       <span :class="actionClasses">{{ action }}</span>
       <br />
@@ -37,7 +37,7 @@ export default {
       this.interval = setInterval(() => {
         const actions = ['Build', 'Create', 'Design', 'Code'];
         this.action = nextElementInList(actions, this.action);
-      }, 1000);
+      }, 3000);
     },
   },
 };

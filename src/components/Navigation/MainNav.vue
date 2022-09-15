@@ -10,9 +10,13 @@
           border-b border-solid border-brand-gray-1
         "
       >
-        <a :href="url" @click="url" class="flex items-center h-full text-xl">{{
-          company
-        }}</a>
+        <router-link
+          :to="{ name: 'Home' }"
+          @click="url"
+          class="flex items-center h-full text-xl"
+        >
+          Google Careers
+        </router-link>
 
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0 list-none">
@@ -46,9 +50,9 @@
 </template>
 
 <script>
-import ActionButton from '@/components/ActionButton.vue';
+import ActionButton from '@/components/Shared/ActionButton.vue';
 import ProfileImage from '@/components/ProfileImage.vue';
-import SubNav from '@/components/SubNav.vue';
+import SubNav from '@/components/Navigation/SubNav.vue';
 
 export default {
   name: 'MainNav',
@@ -59,8 +63,6 @@ export default {
   },
   data() {
     return {
-      company: 'Google Careers',
-      url: 'https://careers.google.com',
       menuItems: [
         'Teams',
         'Locations',
