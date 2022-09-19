@@ -9,6 +9,7 @@
       border border-solid border-brand-gray-3
       rounded-3xl
     "
+    @submit.prevent="searchForJobs"
   >
     <ion-icon name="search-outline" class="ml-4 mr-3"></ion-icon>
 
@@ -51,6 +52,14 @@ export default {
       role: '',
       location: '',
     };
+  },
+  methods: {
+    searchForJobs() {
+      this.$router.push({
+        name: 'JobResults',
+        query: { role: this.role, location: this.location },
+      });
+    },
   },
 };
 </script>
