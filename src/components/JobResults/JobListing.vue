@@ -1,7 +1,7 @@
 <template>
-  <li class="mb-7">
+  <li v-if="show" class="mb-7">
     <router-link
-      to="/jobs/results/1"
+      :to="jobPageLink"
       class="
         block
         mx-auto
@@ -13,48 +13,74 @@
     >
       <div class="pt-5 pb-2 mx-8 border-b border-solid border-brand-gray-2">
         <h2 class="mb-2 text-2xl">
-          Technical Program Manager, Perception, Augmented Reality
+          {{ job.title }}
         </h2>
         <div class="flex flex-row align-middle">
           <div class="mr-5">
-            <span>Google</span>
+            <span>{{ job.organization }}</span>
           </div>
           <div>
-            <span>San Francisco, US, USA</span>
+            <ul>
+              <li
+                v-for="location in job.locations"
+                :key="location"
+                class="inline-block mr-5"
+              >
+                {{ location }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
       <div class="px-8 py-4">
         <div>
-          <h3 class="mt-1 mb-2">Qualifications</h3>
+          <h3 class="mt-1 mb-2">Qualifications:</h3>
           <div>
             <ul class="pl-8 list-disc">
-              <li>Bachelor's degree or equivalent practice experience</li>
-              <li>Master's degree or equivalent practice experience</li>
-              <li>
-                5 years of experience in programm managments Lorem ipsum dolor
-                sit amet consectetur, adipisicing elit. Fuga, provident.
+              <li
+                v-for="qualification in job.minimumQualifications"
+                :key="qualification"
+              >
+                {{ qualification }}
               </li>
             </ul>
           </div>
         </div>
 
         <div class="mt-2 text-center">
-          <router-link to="/jobs/results/1" class="text-brand-blue-1"
+          <router-link :to="jobPageLink" class="text-brand-blue-1"
             >Expand
           </router-link>
         </div>
       </div>
     </router-link>
   </li>
+  <Spinner v-else />
 </template>
 
 <script>
+import Spinner from '@/components/Shared/Spinner.vue';
+
 export default {
   name: 'JobListing',
+  components: { Spinner },
+
+  props: {
+    job: {
+      type: Object,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      show: true,
+    };
+  },
+  computed: {
+    jobPageLink() {
+      return `/jobs/results/${this.job.id}`;
+    },
+  },
 };
 </script>
-
-<style>
-</style>
