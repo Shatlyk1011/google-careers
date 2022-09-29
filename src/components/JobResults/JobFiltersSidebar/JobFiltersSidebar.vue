@@ -8,7 +8,7 @@
       w-96
     "
   >
-    hello
+    JobFiltersSidebar
   </div>
 </template>
 
