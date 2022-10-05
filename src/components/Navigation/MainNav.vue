@@ -70,7 +70,7 @@ export default {
   data() {
     return {
       menuItems: [
-        { text: 'Teams', url: '/' },
+        { text: 'Teams', url: '/teams' },
         { text: 'Locations', url: '/' },
         { text: 'Life at Google', url: '/' },
         { text: 'How we hire', url: '/' },

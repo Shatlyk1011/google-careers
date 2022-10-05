@@ -34,3 +34,8 @@ const fetchJobsV2 = async () => {
 };
 
 fetchJobsV2();
+
+// <!--=============== SETS ===============-->
+// arrays - order
+// objects - association
+// set - uniqueness
