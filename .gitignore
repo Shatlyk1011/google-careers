@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 /dist
+coverage
 
 
 # local env files
@@ -22,6 +23,9 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
+*.json
+
+
 # 
 babel.config.js
 README.md
@@ -30,3 +34,4 @@ jsconfig.json
 vue.config.js
 jest.config.js
 tests
+prettierrc
