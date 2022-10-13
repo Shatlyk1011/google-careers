@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+
 import state from '@/store/state';
 import mutations from '@/store/mutations';
 import getters from '@/store/getters';

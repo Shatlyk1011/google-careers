@@ -1,5 +1,5 @@
 <template>
-  <li v-if="show" class="mb-7">
+  <li class="mb-7">
     <router-link
       :to="jobPageLink"
       class="
@@ -56,7 +56,7 @@
       </div>
     </router-link>
   </li>
-  <Spinner v-else />
+  <!-- <Spinner  /> -->
 </template>
 
 <script>

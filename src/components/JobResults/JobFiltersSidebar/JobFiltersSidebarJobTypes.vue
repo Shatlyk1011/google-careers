@@ -1,22 +1,22 @@
 <template>
-  <Accordion header="Organizations">
+  <Accordion header="Job Types">
     <div class="mt-5">
       <fieldset>
         <ul class="flex flex-row flex-wrap">
           <li
             class="w-1/2 h-8"
-            v-for="organization in UNIQUE_ORGANIZATIONS"
-            :key="organization"
+            v-for="jobType in UNIQUE_JOB_TYPES"
+            :key="jobType"
           >
             <input
               class="mr-3"
               type="checkbox"
-              :id="organization"
-              v-model="selectedOrganizations"
-              :value="organization"
-              @change="selectOrganization"
+              :id="jobType"
+              v-model="selectedJobTypes"
+              :value="jobType"
+              @change="selectJobType"
             />
-            <label :for="organization">{{ organization }}</label>
+            <label :for="jobType">{{ jobType }}</label>
           </li>
         </ul>
       </fieldset>
@@ -27,34 +27,31 @@
 <script>
 import { mapGetters, mapMutations } from 'vuex';
 
-import {
-  UNIQUE_ORGANIZATIONS,
-  ADD_SELECTED_ORGANIZATIONS,
-} from '@/store/constatnts';
+import { UNIQUE_JOB_TYPES, ADD_SELECTED_JOB_TYPES } from '@/store/constatnts';
 
 import Accordion from '@/components/Shared/Accordion.vue';
 
 export default {
-  name: 'JobFiltersSidebarOrganizations',
+  name: 'JobFiltersSidebarJobTypes',
   components: {
     Accordion,
   },
 
   data() {
     return {
-      selectedOrganizations: [],
+      selectedJobTypes: [],
     };
   },
   computed: {
-    ...mapGetters([UNIQUE_ORGANIZATIONS]),
+    ...mapGetters([UNIQUE_JOB_TYPES]),
     /*     UNIQUE_ORGANIZATIONS() {
       return this.$store.getters.UNIQUE_ORGANIZATIONS;
     }, */
   },
   methods: {
-    ...mapMutations([ADD_SELECTED_ORGANIZATIONS]),
-    selectOrganization() {
-      this.ADD_SELECTED_ORGANIZATIONS(this.selectedOrganizations);
+    ...mapMutations([ADD_SELECTED_JOB_TYPES]),
+    selectJobType() {
+      this.ADD_SELECTED_JOB_TYPES(this.selectedJobTypes);
     },
   },
 };
