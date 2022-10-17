@@ -5,7 +5,7 @@
         <ion-icon name="search-outline" class="mr-3 text-base"></ion-icon>
         <span class="text-base">
           <span class="text-brand-green-1">{{
-            this.FILTERED_JOBS_BY_ORGANIZATIONS.length
+            this.FILTERED_JOBS.length
           }}</span>
           jobs matched</span
         >
@@ -17,11 +17,11 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import { FILTERED_JOBS_BY_ORGANIZATIONS } from '@/store/constatnts';
+import { FILTERED_JOBS } from '@/store/constatnts';
 export default {
   name: 'SubNav',
   computed: {
-    ...mapGetters([FILTERED_JOBS_BY_ORGANIZATIONS]),
+    ...mapGetters([FILTERED_JOBS]),
     onJobResultsPage() {
       return this.$route.name === 'JobResults';
     },

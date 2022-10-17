@@ -51,7 +51,7 @@ console.log(numbers); */
 
 // <!--=============== filter ARRAY ===============-->
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+/* const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 const numbers2 = numbers.filter(number => number > 5);
 console.log(numbers2); //[ 6, 7, 8, 9 ]
@@ -64,3 +64,39 @@ const jobs = [
 
 const jobs2 = jobs.filter(orag => orag.org === 'google');
 console.log(jobs2);
+ */
+
+// <!--=============== REACTIVITY ===============-->
+const { ref, reactive, computed } = require('vue');
+// example 1
+/* let a = ref(2);
+let b = ref(4);
+
+let c = computed(() => a.value + b.value);
+console.log(c.value);
+
+a.value = 10;
+console.log(c.value); */
+
+// example 2
+/* const name = ref('Shat');
+const title = computed(() => name.value);
+console.log(title.value);
+
+name.value = 'Igor';
+console.log(title.value);
+ */
+
+// Object Reactivity
+const person = reactive({
+  firstName: 'Shat',
+  lastName: 'Abdullayev',
+});
+
+const title = computed(() => `${person.firstName} ${person.lastName} Good job`);
+const titleLength = computed(() => title.value.length);
+console.log(title.value);
+console.log(titleLength.value);
+
+person.firstName = 'Bayram';
+console.log(title.value);
