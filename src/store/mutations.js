@@ -3,7 +3,7 @@ import {
   RECIEVE_JOBS,
   ADD_SELECTED_ORGANIZATIONS,
   ADD_SELECTED_JOB_TYPES,
-} from '@/store/constatnts';
+} from '@/store/constants';
 
 const mutations = {
   [LOGIN_USER](state) {

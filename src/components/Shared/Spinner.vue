@@ -1,5 +1,5 @@
 <template>
-    <div class="spin"></div>
+  <div class="spin"></div>
 </template>
 
 <script>
@@ -8,19 +8,19 @@ export default {};
 
 <style>
 .spin {
-    display: block;
-    width: 40px;
-    height: 40px;
-    margin: 30px auto;
-    border: 3px solid transparent;
-    border-radius: 50%;
-    border-top-color: #ff8800;
-    animation: spin 0.7s ease infinite;
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 30px auto;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  border-top-color: #252525;
+  animation: spin 0.7s ease infinite;
 }
 
 @keyframes spin {
-    to {
-        transform: rotateZ(360deg);
-    }
+  to {
+    transform: rotateZ(360deg);
+  }
 }
 </style>

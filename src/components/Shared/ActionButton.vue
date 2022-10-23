@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { computed } from 'vue';
 export default {
   name: 'ActionButton',
   props: {
@@ -21,13 +22,13 @@ export default {
       },
     },
   },
-  computed: {
-    buttonClass() {
+  setup(props) {
+    const buttonClass = computed(() => {
       return {
-        primary: this.type === 'primary',
-        secondary: this.type === 'secondary',
+        [props.type]: true,
       };
-    },
+    });
+    return { buttonClass };
   },
 };
 </script>

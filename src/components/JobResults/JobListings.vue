@@ -29,7 +29,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 
-import { FETCH_JOBS, FILTERED_JOBS } from '@/store/constatnts';
+import { FETCH_JOBS, FILTERED_JOBS } from '@/store/constants';
 import JobListing from '@/components/JobResults/JobListing.vue';
 export default {
   name: 'JobListings',

@@ -4,7 +4,7 @@ import {
   FILTERED_JOBS,
   INCLUDE_JOB_BY_ORGANIZATION,
   INCLUDE_JOB_BY_JOB_TYPE,
-} from '@/store/constatnts';
+} from '@/store/constants';
 
 const getters = {
   [UNIQUE_ORGANIZATIONS](state) {

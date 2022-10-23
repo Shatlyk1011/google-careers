@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import { computed, ref } from 'vue';
+
 export default {
   name: 'Accordion',
   props: {
@@ -27,20 +29,17 @@ export default {
       require: true,
     },
   },
-  data() {
-    return {
-      isOpen: false,
+  setup() {
+    const isOpen = ref(false);
+
+    const open = () => {
+      isOpen.value = !isOpen.value;
     };
-  },
-  methods: {
-    open() {
-      this.isOpen = !this.isOpen;
-    },
-  },
-  computed: {
-    caretIcon() {
-      return this.isOpen ? 'chevron-up-outline' : 'chevron-down-outline';
-    },
+    const caretIcon = computed(() => {
+      return isOpen.value ? 'chevron-up-outline' : 'chevron-down-outline';
+    });
+
+    return { open, isOpen, caretIcon };
   },
 };
 </script>
