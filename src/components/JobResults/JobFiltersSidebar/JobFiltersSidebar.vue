@@ -47,8 +47,6 @@ export default {
   components: {
     ActionButton,
     Accordion,
-    JobFiltersSidebarOrganizations,
-    JobFiltersSidebarJobTypes,
     JobFiltersSidebarCheckboxGroup,
   },
 

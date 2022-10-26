@@ -60,6 +60,8 @@
 </template>
 
 <script>
+import { computed } from 'vue';
+
 import Spinner from '@/components/Shared/Spinner.vue';
 
 export default {
@@ -72,15 +74,11 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      show: true,
-    };
-  },
-  computed: {
-    jobPageLink() {
-      return `/jobs/results/${this.job.id}`;
-    },
-  },
+
+  setup(props) {
+    const jobPageLink = computed(() => `/jobs/results/${props.job.id}`);
+
+    return { jobPageLink };
+  }, 
 };
 </script>
