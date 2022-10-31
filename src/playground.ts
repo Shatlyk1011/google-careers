@@ -67,7 +67,7 @@ console.log(jobs2);
  */
 
 // <!--=============== REACTIVITY ===============-->
-const { ref, reactive, computed } = require('vue');
+// const { ref, reactive, computed } = require('vue');
 // example 1
 /* let a = ref(2);
 let b = ref(4);
@@ -88,7 +88,7 @@ console.log(title.value);
  */
 
 // Object Reactivity
-const person = reactive({
+/* const person = reactive({
   firstName: 'Shat',
   lastName: 'Abdullayev',
 });
@@ -100,3 +100,9 @@ console.log(titleLength.value);
 
 person.firstName = 'Bayram';
 console.log(title.value);
+ */
+
+// <!--=============== TS ===============-->
+import { GlobalState } from '@/store/types';
+
+const state: Partial<GlobalState> = {};
