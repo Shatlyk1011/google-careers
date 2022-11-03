@@ -10,6 +10,8 @@ import {
 
 import { Job } from '@/api/types';
 
+import { key } from '@/store';
+
 // <!--=============== GETTERS ===============-->
 
 export const useFilterJobs = () => {

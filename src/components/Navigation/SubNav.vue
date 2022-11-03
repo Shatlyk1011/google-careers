@@ -7,22 +7,23 @@
           <span class="text-brand-green-1">{{
             this.FILTERED_JOBS.length
           }}</span>
-          jobs matched</span
+          jobs matchedd</span
         >
       </div>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { useFilterJobs } from '@/store/composables';
+import { defineComponent } from 'vue';
 
 import useConfirmRoute from '@/composables/UseConfirmRoute';
-export default {
+export default defineComponent({
   name: 'SubNav',
 
   setup() {
-    const FILTERED_JOBS = useFilterJobs;
+    const FILTERED_JOBS = useFilterJobs();
     // const store = useStore();
     // const FILTERED_JOBS = computed(() => store.getters.FILTERED_JOBS);
 
@@ -30,7 +31,7 @@ export default {
 
     return { onJobResultsPage, FILTERED_JOBS };
   },
-};
+});
 </script>
 
 <style>

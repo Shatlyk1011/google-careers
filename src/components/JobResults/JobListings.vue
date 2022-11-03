@@ -26,17 +26,15 @@
   </main>
 </template>
 
-<script>
-import { onMounted, computed } from 'vue';
-import { useStore } from 'vuex';
+<script lang="ts">
+import { onMounted, computed, defineComponent } from 'vue';
 
 import { useFilterJobs, useFetchJobsDispatch } from '@/store/composables';
 import useCurrentPage from '@/composables/UseCurrentPage';
-import usePreviousAndNextPages from '@/composables/UsePreviousAndNextPages';
+import usePreviousAndNextPages from '@/router/UsePreviousAndNextPages';
 
-import { FETCH_JOBS } from '@/store/constants';
 import JobListing from '@/components/JobResults/JobListing.vue';
-export default {
+export default defineComponent({
   name: 'JobListings',
   components: {
     JobListing,
@@ -63,5 +61,5 @@ export default {
 
     return { currentPage, displayedJobs, previousPage, nextPage };
   },
-};
+});
 </script>
