@@ -12,7 +12,6 @@
       >
         <router-link
           :to="{ name: 'Home' }"
-          @click="url"
           class="flex items-center h-full text-xl"
         >
           Google Careers

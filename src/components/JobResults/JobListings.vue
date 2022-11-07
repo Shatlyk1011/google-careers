@@ -29,7 +29,11 @@
 <script lang="ts">
 import { onMounted, computed, defineComponent } from 'vue';
 
-import { useFilterJobs, useFetchJobsDispatch } from '@/store/composables';
+import {
+  useFilterJobs,
+  useFetchJobsDispatch,
+  useFetchDegreesDispatch,
+} from '@/store/composables';
 import useCurrentPage from '@/composables/UseCurrentPage';
 import usePreviousAndNextPages from '@/router/UsePreviousAndNextPages';
 
@@ -41,6 +45,7 @@ export default defineComponent({
   },
   setup() {
     onMounted(useFetchJobsDispatch);
+    onMounted(useFetchDegreesDispatch);
 
     const filteredJobs = useFilterJobs();
 
