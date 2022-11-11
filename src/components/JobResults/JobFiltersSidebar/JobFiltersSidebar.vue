@@ -11,6 +11,10 @@
     <section class="pd-5">
       <JobFiltersSidebarPrompt />
 
+      <Accordion header="Skills and Qualifications">
+        <JobFiltersSidebarSkills />
+      </Accordion>
+
       <Accordion header="Degrees">
         <job-filters-sidebar-degrees />
       </Accordion>
@@ -27,13 +31,19 @@
 </template>
 
 <script type="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
+import { useStore } from 'vuex';
+import { useRoute } from 'vue-router';
+
+import { UPDATE_SKILLS_SEARCH_TERM } from '@/store/constants';
 
 import Accordion from '@/components/Shared/Accordion.vue';
 import JobFiltersSidebarPrompt from '@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarPrompt.vue';
 import JobFiltersSidebarDegrees from '@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarDegrees.vue';
 import JobFiltersSidebarJobTypes from '@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarJobTypes.vue';
 import JobFiltersSidebarOrganizations from '@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganizations.vue';
+
+import JobFiltersSidebarSkills from '@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarSkills.vue';
 export default defineComponent({
   name: 'JobFiltersSidebar',
   components: {
@@ -42,6 +52,18 @@ export default defineComponent({
     JobFiltersSidebarDegrees,
     JobFiltersSidebarJobTypes,
     JobFiltersSidebarOrganizations,
+    JobFiltersSidebarSkills,
+  },
+
+  setup() {
+    const parseSkillsSearchTerm = () => {
+      const route = useRoute();
+      const store = useStore();
+      const role = route.query.role || '';
+      store.commit(UPDATE_SKILLS_SEARCH_TERM, role);
+    };
+
+    onMounted(parseSkillsSearchTerm);
   },
 });
 </script>

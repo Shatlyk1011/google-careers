@@ -16,7 +16,7 @@
     <div class="flex flex-nowrap flex-1 h-full text-base font-light">
       <div class="relative flex items-center flex-1 h-full pr-3">
         <label class="absolute left-0 -top-10 font-medium">Role</label>
-        <TextInput v-model="role" placeholder="Software engineer" />
+        <TextInput v-model="role" placeholder="Ruby, Java" />
       </div>
       <span
         class="

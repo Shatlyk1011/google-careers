@@ -26,12 +26,3 @@ pnpm-debug.log*
 *.json
 
 # 
-babel.config.js
-README.md
-.browserslistrc
-jsconfig.json
-vue.config.js
-jest.config.js
-tests
-.prettierrc
-playground.js
